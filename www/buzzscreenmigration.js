@@ -15,6 +15,10 @@ var BuzzScreenMigration = {
 
   requestDeactivation: function(userId, successCallback, errorCallback){
     cordova.exec(successCallback, errorCallback, 'BuzzScreenMigration', 'requestDeactivation', []);
+  },
+
+  isLockscreenActivated: function(successCallback, errorCallback){
+    cordova.exec(successCallback, errorCallback, 'BuzzScreenMigration', 'isLockscreenActivated', []);
   }
 } 
 

@@ -26,3 +26,4 @@ cordova plugin remove cordova-buzzscreen-migration
 * `requestActivationWithLaunch(successCallback, errorCallback)`
 * `requestActivation(successCallback, errorCallback)`
 * `requestDeactivation(userId, successCallback, errorCallback)`
+* `isLockscreenActivated(successCallback, errorCallback)`

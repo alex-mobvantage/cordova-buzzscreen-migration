@@ -7,6 +7,7 @@ import org.apache.cordova.CordovaPlugin;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.buzzvil.buzzscreen.migration.MigrationHost;
 
@@ -17,6 +18,7 @@ public class BuzzScreenMigrationPlugin extends CordovaPlugin {
     private static final String REQUEST_ACTIVATION_WITH_LAUNCH = "requestActivationWithLaunch";
     private static final String REQUEST_ACTIVATION = "requestActivation";
     private static final String REQUEST_DEACTIVATION = "requestDeactivation";
+    private static final String IS_LOCKSCREEN_ACTIVATED = "isLockScreenActivated";
 
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
@@ -59,6 +61,13 @@ public class BuzzScreenMigrationPlugin extends CordovaPlugin {
             Log.d(TAG, "Requested deactivation");
             callbackContext.success();
             return true;
+        } else if (action.equals(IS_LOCKSCREEN_ACTIVATED)){
+            JSONObject result = new JSONObject();
+            boolean isActivated = MigrationHost.isLockScreenAppActivated();
+            result.put("is_activated", isActivated);
+    
+            Log.i(TAG, "Get is lockscreen activated: " + isActivated);
+            callbackContext.success(result);
         } else {
             Log.e(TAG, "Unknown/unsupported action: " + action);
             callbackContext.error("Unknown/unsupported action");
