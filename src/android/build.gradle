@@ -5,3 +5,10 @@ repositories {
 dependencies {
     compile 'com.buzzvil.buzzscreen.ext:migration-host:0.9.4'
 }
+
+android {
+    defaultConfig {
+        // Please replace my_app_key with the app key provided for BuzzScreen integration process
+        manifestPlaceholders = [buzzScreenAppKey:"my_app_key"]
+    }
+}
