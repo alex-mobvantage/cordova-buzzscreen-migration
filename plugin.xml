@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="cordova-buzzscreen-migration"
+  version="0.0.1">
+      
+  <name>BuzzScreen Migration SDK</name>
+  <description>Cordova plugin for the BuzzScreen Migration SDK</description>
+  <author>Alexander Kawrykow</author>
+  <license>MIT</license>
+  <keywords>buzzscreen,buzzvil,lockscreen,sdk,migration</keywords>
+
+  <engines>
+    <engine name="cordova" version=">=3.0" />
+  </engines>
+
+  <js-module src="www/buzzscreenmigration.js" name="buzzscreenmigration">
+    <clobbers target="BuzzScreenMigration" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="BuzzScreenMigration">
+        <param name="android-package" value="com.buzzvil.buzzscreen.migration.cordova.BuzzScreenMigrationPlugin" />
+      </feature>
+    </config-file>
+			
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.INTERNET" />
+    </config-file>
+
+    <source-file
+      src="src/android/BuzzScreenMigrationPlugin.java"
+      target-dir="src/com/buzzvil/buzzscreen/migration/cordova" />
+    
+    <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+    
+  </platform>
+</plugin>

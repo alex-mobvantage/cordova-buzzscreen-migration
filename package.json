@@ -1,0 +1,24 @@
+{
+  "name": "cordova-buzzscreen-migration",
+  "version": "0.0.1",
+  "description": "Cordova plugin for BuzzScreen Migration SDK",
+  "cordova": {
+    "id": "cordova-buzzscreen-migration",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "buzzscreen",
+    "buzzvil",
+    "lockscreen",
+    "migration",
+    "sdk"
+  ],
+  "author": {
+    "name": "Alexander Kawrykow"
+  },
+  "license": "MIT"
+}

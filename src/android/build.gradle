@@ -1,0 +1,7 @@
+repositories {
+    maven { url "https://dl.bintray.com/buzzvil/buzzscreen/" }
+}
+
+dependencies {
+    compile 'com.buzzvil.buzzscreen.ext:migration-host:0.9.2'
+}
