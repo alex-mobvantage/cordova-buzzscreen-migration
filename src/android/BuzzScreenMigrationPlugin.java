@@ -18,7 +18,7 @@ public class BuzzScreenMigrationPlugin extends CordovaPlugin {
     private static final String REQUEST_ACTIVATION_WITH_LAUNCH = "requestActivationWithLaunch";
     private static final String REQUEST_ACTIVATION = "requestActivation";
     private static final String REQUEST_DEACTIVATION = "requestDeactivation";
-    private static final String IS_LOCKSCREEN_ACTIVATED = "isLockScreenActivated";
+    private static final String IS_LOCKSCREEN_ACTIVATED = "isLockscreenActivated";
 
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
